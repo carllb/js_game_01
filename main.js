@@ -20,6 +20,11 @@ function init(){
   p.endFill();
   player = new Player(p.generateCanvasTexture());
   stage.addChild(player);
+
+  var e = new EntityPickUp(p.generateCanvasTexture());
+  e.x = 100;
+  e.y = 100;
+  stage.addChild(e);
   document.body.appendChild(renderer.view);
 
   gameLoop();
@@ -30,6 +35,15 @@ function gameLoop(){
   //Loop this function 60 times per second
   requestAnimationFrame(gameLoop);
   player.actuate(upKey,downKey,leftKey,rightKey);
+  children = stage.children;
+  for (var i=0; i < children.length; i++ ){
+    child = children[i];
+    if (child instanceof Entity) {
+      child.onUpdate();
+      checkCollisions(child,children,child.onCollision);
+    }
+  }
+
   //Render the stage
   renderer.render(stage);
 }
