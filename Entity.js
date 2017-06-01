@@ -1,4 +1,4 @@
-class Entity extends Sprite {
+class Entity extends PIXI.Sprite {
   constructor(texture){
     super(texture);
   }
@@ -8,7 +8,7 @@ class Entity extends Sprite {
   }
 
   onCollision(otherEntity){
-    
+
   }
 
 }

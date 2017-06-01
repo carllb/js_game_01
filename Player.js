@@ -1,10 +1,10 @@
-class Player extends Sprite{
+class Player extends PIXI.Sprite{
   constructor(texture){
     super(texture);
-    this.speed = 0.5;
+    this.speed = 1;
   }
 
-  getInput(up,down,left,right){
+  actuate(up,down,left,right){
       if(up.isDown){
         this.y -= this.speed;
       }
