@@ -7,7 +7,7 @@ class Entity extends PIXI.Sprite {
 
   }
 
-  onCollision(otherEntity){
+  onCollision(self, otherEntity){
 
   }
 

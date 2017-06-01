@@ -21,13 +21,13 @@ function init(){
   p.endFill();
   player = new Player(p.generateCanvasTexture());
 
-  const e = new PIXI.Graphics();
-  e.beginFill(0x7cea00);
-  e.lineStyle(0);
-  e.drawCircle(40,40,20);
-  e.endFill();
+  const e2 = new PIXI.Graphics();
+  e2.beginFill(0x7cea00);
+  e2.lineStyle(0);
+  e2.drawCircle(40,40,20);
+  e2.endFill();
 
-  en = new dumbEnemy(e.generateCanvasTexture());
+  en = new dumbEnemy(e2.generateCanvasTexture());
 
   stage.addChild(player);
 

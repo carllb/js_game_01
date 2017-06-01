@@ -23,8 +23,10 @@ class dumbEnemy extends Entity{
 
   }
 
-  onCollision(otherEntity){
-
+  onCollision(self, otherEntity){
+    if (otherEntity instanceof Player){
+      self.parent.removeChild(otherEntity);
+    }
   }
 
 }
