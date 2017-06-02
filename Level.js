@@ -23,7 +23,7 @@ class Level extends PIXI.Container{
     w.drawRect(0,0,10, 512);
     w.drawRect(502, 0, 10, 512);
     w.endFill();
-    var wall = new dumbEnemy(w.generateCanvasTexture());
+    var wall = new Wall(w.generateCanvasTexture());
     this.statics.addChild(wall);
 
     this.addChildAt(this.statics,0);
