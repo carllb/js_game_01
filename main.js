@@ -1,9 +1,5 @@
 //aliases for pixi container
-var stage = new PIXI.Container(),
-    renderer = PIXI.autoDetectRenderer(512, 512),
-    TextureCache = PIXI.utils.TextureCache,
-    Sprite = PIXI.Sprite,
-    resources = PIXI.loader.resources;
+var stage;
 
 var upKey = keyboard(87);
 var downKey = keyboard(83);
@@ -14,6 +10,7 @@ var player;
 var en;
 
 function init(){
+  stage = new Level();
   const p = new PIXI.Graphics();
   p.beginFill(0x9bea00);
   p.lineStyle(0);
@@ -33,7 +30,7 @@ function init(){
   stage.addChild(en);
   en.x = stage.width/2;
   en.y = stage.height/2;
-  document.body.appendChild(renderer.view);
+  document.body.appendChild(stage.renderer.view);
 
   gameLoop();
 }
@@ -45,5 +42,5 @@ function gameLoop(){
   player.actuate(upKey,downKey,leftKey,rightKey);
   en.onUpdate();
   //Render the stage
-  renderer.render(stage);
+  stage.renderer.render(stage);
 }
